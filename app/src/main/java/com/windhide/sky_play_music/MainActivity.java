@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button step1_button = findViewById(R.id.step1_button);
         step1_button.setOnClickListener((v)->{
-            if(!haveOverlay){
+            if(!PermissionUtils.hasOverlayPermission(MainActivity.this)){
                 Toast.makeText(MainActivity.this, "没有悬浮窗权限，前去打开吧", Toast.LENGTH_SHORT).show();
                 PermissionUtils.requestOverlayPermission(MainActivity.this);
             }else{
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button step2_button = findViewById(R.id.step2_button);
         step2_button.setOnClickListener((v)->{
-            if(!haveAccessibility) {
+            if(!PermissionUtils.isAccessibilityServiceEnabled(this, MyAccessibilityService.class)) {
                 Toast.makeText(MainActivity.this, "没有无障碍功能哦，前去打开吧", Toast.LENGTH_SHORT).show();
                 PermissionUtils.requestAccessibilityPermission(MainActivity.this);
             }else{
