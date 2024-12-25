@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name" translatable="false">星星弹琴</string>
+    <string name="normal_text" translatable="false">孩子们，还是那句话韩信带净化×，软件免费√。</string>
+    <string name="check_float_button_text" translatable="false">step1.悬浮窗权限获取</string>
+    <string name="check_accessibility_button_text" translatable="false">step2.无障碍权限获取</string>
+    <string name="start_button_text" translatable="false">step3.开始使用</string>
+    <string name="accessibility_service_description" translatable="false">用于弹琴服务，并不会做什么奇奇怪怪的事情放心啦，目前只要了悬浮窗和辅助功能权限哦</string>
+</resources>
