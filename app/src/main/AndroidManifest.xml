@@ -27,7 +27,7 @@
 
         <!-- 无障碍服务 -->
         <service
-            android:name=".MyAccessibilityService"
+            android:name=".ClickService"
             android:exported="true"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
             <intent-filter>
