@@ -39,7 +39,6 @@
         android:layout_height="325dp"
         android:background="@drawable/float_backgroud"
         android:visibility="visible"
-        app:layout_constraintCircleRadius="20px"
         tools:ignore="MissingConstraints,VisualLintBounds"
         tools:layout_editor_absoluteX="4dp"
         tools:layout_editor_absoluteY="84dp">
