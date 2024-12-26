@@ -3,8 +3,6 @@ package com.windhide.sky_play_music;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.PixelFormat;
-import android.graphics.Point;
-import android.view.Display;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -13,9 +11,6 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.Toast;
-
-import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 
@@ -25,9 +20,7 @@ public class FloatingWindowManager {
     private final WindowManager windowManager;
 
     private View childView;
-    private NavigationView navigationView;
     private boolean isDragged = false;
-    private Button setKeyButton,closeButton;
 
     public FloatingWindowManager(Context context) {
         this.context = context;
@@ -35,7 +28,7 @@ public class FloatingWindowManager {
     }
 
     // 显示悬浮窗
-    @SuppressLint("ClickableViewAccessibility")
+    @SuppressLint({"ClickableViewAccessibility", "InflateParams"})
     public void showFloatingWindow() {
         if (Global.floatingView != null) {
             return; // 已经显示悬浮窗
@@ -44,8 +37,8 @@ public class FloatingWindowManager {
         // 创建悬浮窗布局
         Global.floatingView = LayoutInflater.from(context).inflate(R.layout.floating_window_layout, null);
         childView = Global.floatingView.findViewById(R.id.child_layout);
-        setKeyButton = childView.findViewById(R.id.set_key_button);
-        closeButton = childView.findViewById(R.id.close_button);
+        Button setKeyButton = childView.findViewById(R.id.set_key_button);
+        Button closeButton = childView.findViewById(R.id.close_button);
 
 
         // 配置悬浮窗参数
@@ -147,13 +140,5 @@ public class FloatingWindowManager {
                 return false;
             }
         });
-    }
-    // 获取状态栏高度的方法
-    private int getStatusBarHeight() {
-        @SuppressLint("InternalInsetResource") int resourceId = context.getResources().getIdentifier("status_bar_height", "dimen", "android");
-        if (resourceId > 0) {
-            return context.getResources().getDimensionPixelSize(resourceId);
-        }
-        return 0; // 如果获取不到，默认返回 0
     }
 }
