@@ -15,7 +15,7 @@
         android:background="#3C664FA3"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="84dp"
-        tools:layout_editor_absoluteY="4dp">
+        tools:layout_editor_absoluteY="10dp">
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -37,8 +37,9 @@
         android:id="@+id/child_layout"
         android:layout_width="397dp"
         android:layout_height="325dp"
-        android:background="#92000000"
+        android:background="@drawable/float_backgroud"
         android:visibility="visible"
+        app:layout_constraintCircleRadius="20px"
         tools:ignore="MissingConstraints,VisualLintBounds"
         tools:layout_editor_absoluteX="4dp"
         tools:layout_editor_absoluteY="84dp">
